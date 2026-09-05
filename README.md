@@ -12,7 +12,7 @@
 ### 🛠️ Skills & Tools
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,cpp,react,javascript,git,github,vscodium,windows,linux&perline=10" />
+  <img src="https://skillicons.dev/icons?i=cpp,react,javascript,git,python,github,vscodium,windows,linux&perline=10" />
 </p>
 
 
