@@ -1,0 +1,155 @@
+name: Update profile stats
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout profile repository
+        uses: actions/checkout@v5
+
+      - name: Generate live GitHub stats
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: jakubic769
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import ssl
+          import urllib.parse
+          import urllib.request
+          from html import escape
+          from pathlib import Path
+
+          USER = os.environ["GITHUB_USERNAME"]
+          TOKEN = os.environ["GH_TOKEN"]
+
+          headers = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {TOKEN}",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "User-Agent": "Jakubic769-profile-stats",
+          }
+          ctx = ssl.create_default_context()
+
+          def get_json(url):
+              req = urllib.request.Request(url, headers=headers)
+              with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
+                  return json.loads(r.read().decode("utf-8"))
+
+          quser = urllib.parse.quote(USER)
+          user = get_json(f"https://api.github.com/users/{quser}")
+
+          repos = []
+          page = 1
+          while True:
+              batch = get_json(
+                  f"https://api.github.com/users/{quser}/repos"
+                  f"?type=owner&per_page=100&page={page}&sort=updated"
+              )
+              repos.extend(batch)
+              if len(batch) < 100:
+                  break
+              page += 1
+
+          public_repos = int(user.get("public_repos", len(repos)))
+          followers = int(user.get("followers", 0))
+          following = int(user.get("following", 0))
+          total_stars = sum(int(r.get("stargazers_count", 0)) for r in repos)
+          total_forks = sum(int(r.get("forks_count", 0)) for r in repos)
+
+          language_bytes = {}
+          for repo in repos:
+              if repo.get("fork") or not repo.get("name"):
+                  continue
+              try:
+                  langs = get_json(
+                      f"https://api.github.com/repos/{quser}/{urllib.parse.quote(repo['name'])}/languages"
+                  )
+              except Exception:
+                  continue
+              for language, count in langs.items():
+                  language_bytes[language] = language_bytes.get(language, 0) + int(count)
+
+          top_languages = sorted(language_bytes.items(), key=lambda x: x[1], reverse=True)[:6]
+          lang_total = sum(v for _, v in top_languages) or 1
+          palette = ["#58A6FF", "#A371F7", "#3FB950", "#D29922", "#F85149", "#79C0FF"]
+
+          out = Path("assets")
+          out.mkdir(exist_ok=True)
+
+          stats_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="495" height="165" viewBox="0 0 495 165">
+          <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#161B22"/><stop offset="1" stop-color="#20263A"/></linearGradient></defs>
+          <rect width="494" height="164" rx="10" fill="url(#bg)" stroke="#30363D"/>
+          <text x="26" y="32" fill="#F0F6FC" font-size="18" font-family="Segoe UI,Arial" font-weight="700">Jakub's GitHub Stats</text>
+          <text x="26" y="56" fill="#8B949E" font-size="12" font-family="Segoe UI,Arial">Live data from GitHub API</text>
+          <text x="26" y="89" fill="#58A6FF" font-size="11" font-family="Segoe UI,Arial" font-weight="700">STARS</text>
+          <text x="26" y="116" fill="#F0F6FC" font-size="23" font-family="Segoe UI,Arial" font-weight="700">{total_stars}</text>
+          <text x="145" y="89" fill="#58A6FF" font-size="11" font-family="Segoe UI,Arial" font-weight="700">REPOSITORIES</text>
+          <text x="145" y="116" fill="#F0F6FC" font-size="23" font-family="Segoe UI,Arial" font-weight="700">{public_repos}</text>
+          <text x="282" y="89" fill="#58A6FF" font-size="11" font-family="Segoe UI,Arial" font-weight="700">FOLLOWERS</text>
+          <text x="282" y="116" fill="#F0F6FC" font-size="23" font-family="Segoe UI,Arial" font-weight="700">{followers}</text>
+          <text x="397" y="89" fill="#58A6FF" font-size="11" font-family="Segoe UI,Arial" font-weight="700">FORKS</text>
+          <text x="397" y="116" fill="#F0F6FC" font-size="23" font-family="Segoe UI,Arial" font-weight="700">{total_forks}</text>
+          <text x="26" y="145" fill="#8B949E" font-size="11" font-family="Segoe UI,Arial">Following: {following}</text>
+          </svg>'''
+
+          rows = []
+          y = 78
+          for i, (language, amount) in enumerate(top_languages):
+              pct = amount / lang_total * 100
+              width = max(8, min(435, pct * 4.35))
+              color = palette[i % len(palette)]
+              rows.append(
+                  f'<text x="26" y="{y}" fill="#F0F6FC" font-size="12" font-family="Segoe UI,Arial">{escape(language)}</text>'
+                  f'<text x="461" y="{y}" text-anchor="end" fill="#8B949E" font-size="11" font-family="Segoe UI,Arial">{pct:.1f}%</text>'
+                  f'<rect x="26" y="{y+9}" width="435" height="6" rx="3" fill="#30363D"/>'
+                  f'<rect x="26" y="{y+9}" width="{width:.1f}" height="6" rx="3" fill="{color}"/>'
+              )
+              y += 25
+
+          language_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="495" height="165" viewBox="0 0 495 165">
+          <rect width="494" height="164" rx="10" fill="#161B22" stroke="#30363D"/>
+          <text x="26" y="32" fill="#F0F6FC" font-size="18" font-family="Segoe UI,Arial" font-weight="700">Top Languages</text>
+          <text x="26" y="55" fill="#8B949E" font-size="12" font-family="Segoe UI,Arial">Aggregated from public repositories</text>
+          {''.join(rows) if rows else '<text x="26" y="92" fill="#8B949E" font-size="13" font-family="Segoe UI,Arial">No language data available.</text>'}
+          </svg>'''
+
+          extra_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="495" height="165" viewBox="0 0 495 165">
+          <rect width="494" height="164" rx="10" fill="#161B22" stroke="#30363D"/>
+          <text x="26" y="32" fill="#F0F6FC" font-size="18" font-family="Segoe UI,Arial" font-weight="700">Jakub's Activity Snapshot</text>
+          <text x="26" y="56" fill="#8B949E" font-size="12" font-family="Segoe UI,Arial">Updated automatically by GitHub Actions</text>
+          <text x="26" y="92" fill="#58A6FF" font-size="11" font-family="Segoe UI,Arial" font-weight="700">STARS</text>
+          <text x="26" y="120" fill="#F0F6FC" font-size="24" font-family="Segoe UI,Arial" font-weight="700">{total_stars}</text>
+          <text x="145" y="92" fill="#58A6FF" font-size="11" font-family="Segoe UI,Arial" font-weight="700">FORKS</text>
+          <text x="145" y="120" fill="#F0F6FC" font-size="24" font-family="Segoe UI,Arial" font-weight="700">{total_forks}</text>
+          <text x="250" y="92" fill="#58A6FF" font-size="11" font-family="Segoe UI,Arial" font-weight="700">FOLLOWERS</text>
+          <text x="250" y="120" fill="#F0F6FC" font-size="24" font-family="Segoe UI,Arial" font-weight="700">{followers}</text>
+          <text x="26" y="145" fill="#8B949E" font-size="11" font-family="Segoe UI,Arial">github.com/{USER}</text>
+          </svg>'''
+
+          (out / "github-stats.svg").write_text(stats_svg, encoding="utf-8")
+          (out / "github-languages.svg").write_text(language_svg, encoding="utf-8")
+          (out / "github-extra-stats.svg").write_text(extra_svg, encoding="utf-8")
+          PY
+
+      - name: Commit updated statistics
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/github-stats.svg assets/github-languages.svg assets/github-extra-stats.svg
+          if git diff --cached --quiet; then
+            echo "No stats changes."
+          else
+            git commit -m "chore: update profile stats"
+            git push
+          fi

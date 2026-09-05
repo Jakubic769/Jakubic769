@@ -37,7 +37,7 @@
 
 
 ### 🔗 Let's Connect
- 
+
 <p align="center">
   <a href="https://github.com/jakubic769"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
   <img src="https://img.shields.io/badge/Discord-jakubic769-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
@@ -47,23 +47,22 @@
 
 
 ### 📊 GitHub Stats
- 
+
 <p align="center">
-  <img height="165" src="https://github-stats-extended.vercel.app/api?username=jakubic769&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs/?username=jakubic769&layout=compact&theme=tokyonight&hide_border=true" />
+  <img height="165" src="./assets/github-stats.svg" />
+  <img height="165" src="./assets/github-languages.svg" />
 </p>
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=jakubic769&theme=tokyonight&hide_border=true" />
 </p>
 <p align="center">
-  <img src="https://github-stats-extended.vercel.app/api/?username=jakubic769&show_icons=true&theme=tokyonight&rank_icon=github&include_all_commits=true&custom_title=Jakub%27s+Stats&disable_animations=true&number_format=long&show=prs_merged_percentage,prs_reviewed&hide_border=true" />
+  <img src="./assets/github-extra-stats.svg" />
 </p>
- 
+
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3c72,100:2a5298&height=120&section=footer" width="100%"/>
 
-  
+
 **Thanks for stopping by! ⭐ Feel free to explore my repositories.**
- 
+
 </div>
- 
