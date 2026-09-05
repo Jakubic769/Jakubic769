@@ -37,7 +37,11 @@
   <a href="mailto:jakubsuszek39@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
 
+### 🛠️ Skills & Tools
 
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,cpp,react,javascript,git,github,vscodium,windows,linux&perline=10" />
+</p>
 
 ### 📊 GitHub Stats
  
@@ -51,10 +55,6 @@
 <p align="center">
   <img src="https://github-stats-extended.vercel.app/api/?username=jakubic769&show_icons=true&theme=tokyonight&rank_icon=github&include_all_commits=true&custom_title=Jakub%27s+Stats&disable_animations=true&number_format=long&show=prs_merged_percentage,prs_reviewed&hide_border=true" />
 </p>
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=jakubic769&theme=tokyo-night&hide_border=true" width="100%"/>
-</p>
----
  
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3c72,100:2a5298&height=120&section=footer" width="100%"/>
