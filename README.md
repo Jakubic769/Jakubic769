@@ -19,8 +19,6 @@
 - 🎯 **Goal:** *building useful tools and improving as a developer*
 - ⚡ **Fun fact:** *i love cats 🐈*
 
-
-
 ### 🚀 Featured Projects
 
 | Project | Description | Tech Stack | Link |
@@ -32,11 +30,11 @@
 
 
 ### 🔗 Let's Connect
-
+ 
 <p align="center">
   <a href="https://github.com/jakubic769"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
-  <a href="jakubic769"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"/></a>
-  <a href="jakubsuszek39@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+  <img src="https://img.shields.io/badge/Discord-jakubic769-5865F2?style=for-the-badge&logo=discord&logoColor=white"/>
+  <a href="mailto:jakubsuszek39@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
 
 
@@ -60,6 +58,7 @@
  
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3c72,100:2a5298&height=120&section=footer" width="100%"/>
+  
 **Thanks for stopping by! ⭐ Feel free to explore my repositories.**
  
 </div>
