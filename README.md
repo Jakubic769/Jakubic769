@@ -9,6 +9,13 @@
 </div>
 
 
+### 🛠️ Skills & Tools
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,cpp,react,javascript,git,github,vscodium,windows,linux&perline=10" />
+</p>
+
+
 
 ### 👤 About Me
 
@@ -37,11 +44,7 @@
   <a href="mailto:jakubsuszek39@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
 
-### 🛠️ Skills & Tools
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,cpp,react,javascript,git,github,vscodium,windows,linux&perline=10" />
-</p>
 
 ### 📊 GitHub Stats
  
@@ -58,6 +61,7 @@
  
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3c72,100:2a5298&height=120&section=footer" width="100%"/>
+
   
 **Thanks for stopping by! ⭐ Feel free to explore my repositories.**
  
