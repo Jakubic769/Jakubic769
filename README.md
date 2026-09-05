@@ -21,10 +21,10 @@
 
 - 🎓 **Role:** *Self-taught Developer / learning on giganciprogramowania.edu.pl*
 - 📍 **Location:** *Poland*
-- 💻 **Currently learning:** *cpp, networking, CyberSecurity*
-- 🌱 **Working on:** *side projects on GitHub*
-- 🎯 **Goal:** *building useful tools and improving as a developer*
-- ⚡ **Fun fact:** *i love cats 🐈*
+- 💻 **Currently learning:** *C++, Networking, CyberSecurity*
+- 🌱 **Working on:** *Side projects on GitHub*
+- 🎯 **Goal:** *Building useful tools and improving as a developer*
+- ⚡ **Fun fact:** *I love cats 🐈*
 
 ### 🚀 Featured Projects
 
