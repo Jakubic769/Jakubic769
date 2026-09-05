@@ -41,35 +41,26 @@
 
 
 
-### 🛠️ Skills & Tools
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,cpp,react,javascript,git,github,vscodium,windows,linux&perline=10" />
-</p>
-
-
-
 ### 📊 GitHub Stats
-
+ 
 <p align="center">
   <img height="165" src="https://github-readme-stats.vercel.app/api?username=jakubic769&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
   <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=jakubic769&layout=compact&theme=tokyonight&hide_border=true" />
 </p>
-
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=jakubic769&theme=tokyonight&hide_border=true" />
 </p>
-
+<p align="center">
+  <img src="https://github-stats-extended.vercel.app/api/?username=jakubic769&show_icons=true&theme=tokyonight&rank_icon=github&include_all_commits=true&custom_title=Jakub%27s+Stats&disable_animations=true&number_format=long&show=prs_merged_percentage,prs_reviewed&hide_border=true" />
+</p>
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=jakubic769&theme=tokyo-night&hide_border=true" width="100%"/>
 </p>
-
-
-
+---
+ 
 <div align="center">
-
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3c72,100:2a5298&height=120&section=footer" width="100%"/>
-
 **Thanks for stopping by! ⭐ Feel free to explore my repositories.**
-
+ 
 </div>
+ 
