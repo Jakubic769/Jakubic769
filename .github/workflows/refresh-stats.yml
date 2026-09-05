@@ -1,0 +1,58 @@
+name: Refresh GitHub stats cards
+
+on:
+  schedule:
+    # Runs every day. The version in README is changed to bust image/CDN cache.
+    - cron: "23 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout profile
+        uses: actions/checkout@v5
+
+      - name: Update stats cache-buster
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          import time
+
+          path = Path("README.md")
+          text = path.read_text(encoding="utf-8")
+
+          version = str(int(time.time()))
+
+          # Update only the stats-card image query parameter.
+          text = re.sub(
+              r"(github-stats-extended\.vercel\.app/[^\"']*?[?&]v=)\d+",
+              rf"\g<1>{version}",
+              text,
+          )
+
+          # The three stats cards above all contain v=..., but this also
+          # handles the case where a user manually edited one of them.
+          text = text.replace("<!-- STATS_VERSION: 1 -->", f"<!-- STATS_VERSION: {version} -->")
+
+          path.write_text(text, encoding="utf-8")
+          print(f"Stats cache-buster: {version}")
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "chore: refresh GitHub stats cards"
+            git push
+          fi
