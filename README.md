@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3c72,100:2a5298&height=200&section=header&text=Hi%20There,%20I'm%20Jakub%20👋&fontSize=42&fontColor=ffffff&animation=fadeIn&desc=Welcome%20to%20my%20GitHub%20profile&descAlignY=60&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3c72,100:2a5298&height=200&section=header&text=Hi%20There,%20I'm%20Z4XQ%20🌙&fontSize=40&fontColor=ffffff&animation=fadeIn&desc=Welcome%20to%20my%20GitHub%20profile&descAlignY=55&descSize=18" width="100%"/>
 
 <a href="https://github.com/jakubic769">
   <img src="https://readme-typing-svg.demolab.com/?lines=Software+Developer;Python+%26+Automation+Enthusiast;Always+learning+something+new;Welcome+to+my+profile!&font=Fira%20Code&center=true&width=440&height=45&color=58A6FF&vCenter=true&pause=1200" />
