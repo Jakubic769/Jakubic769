@@ -8,7 +8,7 @@
 
 </div>
 
----
+
 
 ### 👤 About Me
 
@@ -19,7 +19,7 @@
 - 🎯 **Goal:** *building useful tools and improving as a developer*
 - ⚡ **Fun fact:** *i love cats 🐈*
 
----
+
 
 ### 🚀 Featured Projects
 
@@ -29,7 +29,7 @@
 | **BlueMoon** | *sniper for rare usernames.* | `Python` | [View Repo](https://github.com/jakubic769/bluemoon) |
 | **Sealm** | *game launcher for "free" games.* | `React` | [View Repo](https://github.com/jakubic769/sealm) |
 
----
+
 
 ### 🔗 Let's Connect
 
@@ -39,7 +39,7 @@
   <a href="jakubsuszek39@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 </p>
 
----
+
 
 ### 🛠️ Skills & Tools
 
@@ -47,7 +47,7 @@
   <img src="https://skillicons.dev/icons?i=python,cpp,react,javascript,git,github,vscodium,windows,linux&perline=10" />
 </p>
 
----
+
 
 ### 📊 GitHub Stats
 
@@ -64,7 +64,7 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=jakubic769&theme=tokyo-night&hide_border=true" width="100%"/>
 </p>
 
----
+
 
 <div align="center">
 
