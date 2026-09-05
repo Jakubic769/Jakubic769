@@ -21,7 +21,7 @@
 
 - 🎓 **Role:** *Self-taught Developer / learning on giganciprogramowania.edu.pl*
 - 📍 **Location:** *Poland*
-- 💻 **Currently learning:** *edytuj — np. Python, automation, networking*
+- 💻 **Currently learning:** *cpp, networking, CyberSecurity*
 - 🌱 **Working on:** *side projects on GitHub*
 - 🎯 **Goal:** *building useful tools and improving as a developer*
 - ⚡ **Fun fact:** *i love cats 🐈*
