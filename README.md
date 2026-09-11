@@ -51,14 +51,14 @@
 <!-- STATS_VERSION: 1788647372 -->
 
 <p align="center">
-  <img height="165" src="https://github-stats-extended.vercel.app/api?username=jakubic769&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=21600&v=1789028154" />
-  <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs/?username=jakubic769&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=21600&v=1789028154" />
+  <img height="165" src="https://github-stats-extended.vercel.app/api?username=jakubic769&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=21600&v=1789114241" />
+  <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs/?username=jakubic769&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=21600&v=1789114241" />
 </p>
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=jakubic769&theme=tokyonight&hide_border=true&v=1" />
 </p>
 <p align="center">
-  <img src="https://github-stats-extended.vercel.app/api/?username=jakubic769&show_icons=true&theme=tokyonight&rank_icon=github&include_all_commits=true&custom_title=Jakub%27s+Stats&disable_animations=true&number_format=long&show=prs_merged_percentage,prs_reviewed&hide_border=true&cache_seconds=21600&v=1789028154" />
+  <img src="https://github-stats-extended.vercel.app/api/?username=jakubic769&show_icons=true&theme=tokyonight&rank_icon=github&include_all_commits=true&custom_title=Jakub%27s+Stats&disable_animations=true&number_format=long&show=prs_merged_percentage,prs_reviewed&hide_border=true&cache_seconds=21600&v=1789114241" />
 </p>
 
 <div align="center">
